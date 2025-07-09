@@ -33,7 +33,7 @@ jobs:
     artifacts:
       - build/html/**
 
-  - name: package
+  - name: build
     image: python:3.11
     run: |
       pip install -r requirements.txt
