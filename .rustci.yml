@@ -1,0 +1,42 @@
+version: "1"
+
+jobs:
+  - name: install
+    image: python:3.11
+    run: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+
+  - name: lint
+    image: python:3.11
+    run: |
+      pip install -r requirements.txt
+      flake8 .
+
+  - name: test
+    image: python:3.11
+    run: |
+      pip install -r requirements.txt
+      pytest
+
+  - name: type-check
+    image: python:3.11
+    run: |
+      pip install -r requirements.txt
+      mypy app
+
+  - name: docs
+    image: python:3.11
+    run: |
+      pip install -r requirements.txt
+      sphinx-build -b html docs/ build/html
+    artifacts:
+      - build/html/**
+
+  - name: package
+    image: python:3.11
+    run: |
+      pip install -r requirements.txt
+      python -m build
+    artifacts:
+      - dist/** 
