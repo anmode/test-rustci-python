@@ -1,7 +1,7 @@
 # Demo App for RustCI Pipeline
 
 This is a tiny Python project demonstrating how to set up a 6‑job `.rustci.yml` file
-that RustCI can run end‑to‑end: install, lint, test, type‑check, docs build, and package.
+that RustCI can run end‑to‑end: install, lint, test, type‑check, docs build, and package
 
 To try locally:
 
